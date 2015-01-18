@@ -3,8 +3,25 @@
 
 <beans>
 <bean id="triangle" class="org.julia.javabrains.Triangle">
-<constructor-arg index="0"  value="Equilateral"/>
-<constructor-arg  index="1" value="20"/>
+<property name="pointA" ref="zeroPoint"></property>
+<property name="pointB" ref="point2"></property>
+<property name="pointC" ref="point3"></property>
+</bean>
+
+
+<bean id = "zeroPoint" class="org.julia.javabrains.Point">
+<property name="x" value="0"/>
+<property name="y" value="0"/>
+</bean>
+
+<bean id = "point2" class="org.julia.javabrains.Point">
+<property name="x" value="-20"/>
+<property name="y" value="0"/>
+</bean>
+
+<bean id = "point3" class="org.julia.javabrains.Point">
+<property name="x" value="20"/>
+<property name="y" value="0"/>
 </bean>
 
 </beans>
