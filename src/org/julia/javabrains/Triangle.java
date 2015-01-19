@@ -1,16 +1,13 @@
 package org.julia.javabrains;
 
-import org.springframework.beans.BeansException;
-import org.springframework.beans.factory.BeanNameAware;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle implements ApplicationContextAware, BeanNameAware{
+public class Triangle implements InitializingBean, DisposableBean{
 
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
-	private ApplicationContext context;
 
 	public Point getPointA() {
 		return pointA;
@@ -37,21 +34,32 @@ public class Triangle implements ApplicationContextAware, BeanNameAware{
 	}
 
 	public void draw() {
-		System.out.println("Point A = (" + getPointA().getX() + ";" + getPointA().getY()+")");
-		System.out.println("Point B = (" + getPointB().getX() + ";" + getPointB().getY()+")");
-		System.out.println("Point C = (" + getPointC().getX() + ";" + getPointC().getY()+")");
+		System.out.println("Point A = (" + getPointA().getX() + ";"
+				+ getPointA().getY() + ")");
+		System.out.println("Point B = (" + getPointB().getX() + ";"
+				+ getPointB().getY() + ")");
+		System.out.println("Point C = (" + getPointC().getX() + ";"
+				+ getPointC().getY() + ")");
+	}
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("InitializingBean init method called for Triangle");
 	}
 
 	@Override
-	public void setApplicationContext(ApplicationContext context)
-			throws BeansException {
-	this.context = context;
+	public void destroy() throws Exception {
+		System.out.println("DisposableBean destroy method called for Triangle");
 		
 	}
 
-	@Override
-	public void setBeanName(String beanName) {
-		System.out.println("Bean name is: " + beanName);
-		
+	
+	public void myInit(){
+		System.out.println("My init method called for Triangle");
+	}
+	
+	public void cleanUp(){
+		System.out.println("My cleanup destroy method called for Triangle");
 	}
 }
