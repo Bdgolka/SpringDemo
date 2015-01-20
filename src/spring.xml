@@ -24,7 +24,8 @@
 	</bean>
 
 	<bean id="circle" class="org.julia.javabrains.Circle">
-		<property name="center" ref="pointA"></property>	
+		
 	</bean>
-
+	
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
 </beans>

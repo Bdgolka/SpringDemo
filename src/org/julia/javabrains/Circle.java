@@ -1,5 +1,7 @@
 package org.julia.javabrains;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Circle implements Shape {
 
 	protected Point center;
@@ -8,6 +10,7 @@ public class Circle implements Shape {
 		return center;
 	}
 
+	@Required // tells to spring that this is a required 
 	public void setCenter(Point center) {
 		this.center = center;
 	}
