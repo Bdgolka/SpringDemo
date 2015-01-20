@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
 
-<beans >
-	<bean id="triangle" class="org.julia.javabrains.Triangle" autowire="byName" >
+<beans>
+	<bean id="triangle" class="org.julia.javabrains.Triangle"
+		autowire="byName">
 
 	</bean>
 
 	<bean id="pointA" class="org.julia.javabrains.Point">
-		<property name="x" value="0" />
-		<property name="y" value="0" />
+		<property name="x" value="${pointA.pointX}" />
+		<property name="y" value="${pointA.pointY}" />
 	</bean>
 
 	<bean id="pointB" class="org.julia.javabrains.Point">
@@ -20,7 +21,8 @@
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
-	
-	<bean class="org.julia.javabrains.DisplayNameBeanPostProssesor"/>
 
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+<property name="locations" value="pointsconfig.properties"></property>
+	</bean>
 </beans>
