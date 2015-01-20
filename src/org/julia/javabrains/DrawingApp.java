@@ -17,7 +17,6 @@ public class DrawingApp {
 		context.registerShutdownHook();// in the end will destroy all the beans
 		Shape shape = (Shape) context.getBean("circle");
 		shape.draw();
-		
-		
+
 	}
 }
