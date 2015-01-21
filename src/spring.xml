@@ -19,7 +19,7 @@
 		<property name="y" value="0" />
 	</bean>
 
-	<bean id="pointC" class="org.julia.javabrains.Point">
+	<bean id="center" class="org.julia.javabrains.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
