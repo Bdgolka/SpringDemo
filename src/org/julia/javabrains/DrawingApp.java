@@ -9,7 +9,7 @@ public class DrawingApp {
 
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
 				"spring.xml");
-		context.registerShutdownHook();// in the end will destroy all the beans
+		//context.registerShutdownHook();// in the end will destroy all the beans
 		Shape shape = (Shape) context.getBean("circle");
 		shape.draw();
 	}
