@@ -23,10 +23,9 @@
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
+	
+	<context:annotation-config/>
+	
+	<context:component-scan base-package="org.julia.javabrains"/>
 
-	<bean id="circle" class="org.julia.javabrains.Circle">
-	</bean>
-
-	<!-- Defining all the PostProsseser annotations -->
-	<context:annotation-config />
 </beans>
