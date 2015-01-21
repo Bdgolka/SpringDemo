@@ -1,12 +1,7 @@
 package org.julia.javabrains;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.context.support.*;
-import org.springframework.beans.factory.xml.XmlBeanFactory;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.core.io.FileSystemResource;
 
 public class DrawingApp {
 
@@ -17,6 +12,5 @@ public class DrawingApp {
 		context.registerShutdownHook();// in the end will destroy all the beans
 		Shape shape = (Shape) context.getBean("circle");
 		shape.draw();
-
 	}
 }

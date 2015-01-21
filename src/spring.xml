@@ -23,9 +23,18 @@
 		<property name="x" value="20" />
 		<property name="y" value="0" />
 	</bean>
-	
-	<context:annotation-config/>
-	
-	<context:component-scan base-package="org.julia.javabrains"/>
+
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>mymessages</value>
+			</list>
+		</property>
+	</bean>
+
+	<context:annotation-config />
+
+	<context:component-scan base-package="org.julia.javabrains" />
 
 </beans>
